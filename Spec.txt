@@ -1,0 +1,39 @@
+For this part of the assignment you will be using the same house
+dataset as used for the data preparation part of the coursework.
+You can use either the original data or a cleaned up version of
+the data from the first part.
+
+You are asked to build four machine learning prediction models
+for predicting the mean house price from the other features
+provided in the dataset.
+
+As it is fairly easy to use the toolkit to generate multiple machine
+learning models the marking here will be based on how you compare
+the different approaches and how you try to improve your results.
+You should produce metrics for your different approaches and use
+those to say which is the best approach providing tables / graphs / figures
+to show your results. You should demonstrate that you have tried to improve
+the results of your models by trying different hyper-parameters and/or
+manipulations for that type of ML model. It is expected that there will be
+a short (no more than 300 words) report within your submission to explain
+your results and what you have done.
+
+
+...
+
+
+Some hints:
+
+Here is a notebook which might be a good starting point:
+MachineLearningStart.ipynb Download MachineLearningStart.ipynb
+
+Make sure that you separate testing data from training data to
+ensure that you are testing your models on unseen data and not on
+the same data that you learnt on.
+
+A number of the features are such things as 'total_rooms' and 'total_bedrooms'.
+This is for all houses in the area. As the size of the areas may be different it
+is worth normalising these based on the number of properties in the area.
+
+This is not a competition. The marks are based on how well you compare and contrast
+the different models that you build rather than how you compare to others in the class.
