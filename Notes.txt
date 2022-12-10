@@ -5,39 +5,23 @@
 3. Deep Neural Network
 4. Genetic-Programming
 
+
 >>> Correlation matrix
+# Print correlation matrix
+corr = df.corr()
+print(corr)
 
-                    median_house_value  median_income  housing_median_age  \
-median_house_value            1.000000       0.688075            0.105623
-median_income                 0.688075       1.000000           -0.119034
-housing_median_age            0.105623      -0.119034            1.000000
-total_rooms                   0.134153       0.198050           -0.361262
-total_bedrooms                0.050594      -0.008093           -0.320485
-population                   -0.024650       0.004834           -0.296244
-households                    0.065843       0.013033           -0.302916
-latitude                     -0.144160      -0.079809            0.011173
-longitude                    -0.045967      -0.015176           -0.108197
+                    median_house_value  median_income  housing_median_age    total_rooms  total_bedrooms  population  households  latitude  longitude
+median_house_value            1.000000       0.688075            0.105623       0.134153        0.050594   -0.024650    0.065843 -0.144160  -0.045967
 
-                    total_rooms  total_bedrooms  population  households  \
-median_house_value     0.134153        0.050594   -0.024650    0.065843
-median_income          0.198050       -0.008093    0.004834    0.013033
-housing_median_age    -0.361262       -0.320485   -0.296244   -0.302916
-total_rooms            1.000000        0.929893    0.857126    0.918484
-total_bedrooms         0.929893        1.000000    0.878026    0.979829
-population             0.857126        0.878026    1.000000    0.907222
-households             0.918484        0.979829    0.907222    1.000000
-latitude              -0.036100       -0.066318   -0.108785   -0.071035
-longitude              0.044568        0.068378    0.099773    0.055310
-
-                    latitude  longitude
-median_house_value -0.144160  -0.045967
-median_income      -0.079809  -0.015176
-housing_median_age  0.011173  -0.108197
-total_rooms        -0.036100   0.044568
-total_bedrooms     -0.066318   0.068378
-population         -0.108785   0.099773
-households         -0.071035   0.055310
-latitude            1.000000  -0.924664
-longitude          -0.924664   1.000000
-
+                    median_house_value  median_income  housing_median_age    total_rooms  total_bedrooms  population  households  latitude  longitude
+median_house_value            1.000000       0.688075            0.105623       0.134153        0.050594   -0.024650    0.065843 -0.144160  -0.045967
+median_income                 0.688075       1.000000           -0.119034       0.198050       -0.008093    0.004834    0.013033 -0.079809  -0.015176
+housing_median_age            0.105623      -0.119034           1.000000       -0.361262       -0.320485   -0.296244   -0.302916  0.011173  -0.108197
+total_rooms                   0.134153       0.198050           -0.361262       1.000000        0.929893    0.857126    0.918484 -0.036100   0.044568
+total_bedrooms                0.050594      -0.008093           -0.320485       0.929893        1.000000    0.878026    0.979829 -0.066318   0.068378
+population                   -0.024650       0.004834           -0.296244       0.857126        0.878026    1.000000    0.907222 -0.108785   0.099773
+households                    0.065843       0.013033           -0.302916       0.918484        0.979829    0.907222    1.000000 -0.071035   0.055310
+latitude                     -0.144160      -0.079809           0.011173       -0.036100       -0.066318   -0.108785   -0.071035  1.000000  -0.924664
+longitude                    -0.045967      -0.015176           -0.108197       0.044568        0.068378    0.099773    0.055310 -0.924664   1.000000
 
