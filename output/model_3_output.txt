@@ -1,0 +1,58 @@
+C:\Users\lees_\Scripts\python.exe C:\Users\lees_\PycharmProjects\-Predictive-AI-Part-2\model_3.py
+(20640, 9)
+
+Index(['median_house_value', 'median_income', 'housing_median_age',
+       'total_rooms', 'total_bedrooms', 'population', 'households', 'latitude',
+       'longitude'],
+      dtype='object')
+(20640, 9)
+
+Index(['median_house_value', 'median_income', 'housing_median_age',
+       'population', 'households', 'latitude', 'longitude', 'total_rooms_norm',
+       'total_bedrooms_norm'],
+      dtype='object')
+2022-12-10 23:35:56.645328: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ dense (Dense)               (None, 128)               1152
+
+ dense_1 (Dense)             (None, 64)                8256
+
+ dense_2 (Dense)             (None, 64)                4160
+
+ dense_3 (Dense)             (None, 1)                 65
+
+=================================================================
+Total params: 13,633
+Trainable params: 13,633
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+3457/3457 [==============================] - 3s 693us/step - loss: 15658281984.0000 - mse: 15658281984.0000 - accuracy: 0.0000e+00
+Epoch 2/10
+3457/3457 [==============================] - 2s 681us/step - loss: 11393909760.0000 - mse: 11393909760.0000 - accuracy: 0.0000e+00
+Epoch 3/10
+3457/3457 [==============================] - 2s 689us/step - loss: 10288277504.0000 - mse: 10288277504.0000 - accuracy: 0.0000e+00
+Epoch 4/10
+3457/3457 [==============================] - 2s 692us/step - loss: 7579474432.0000 - mse: 7579474432.0000 - accuracy: 0.0000e+00
+Epoch 5/10
+3457/3457 [==============================] - 2s 681us/step - loss: 5885197312.0000 - mse: 5885197312.0000 - accuracy: 0.0000e+00
+Epoch 6/10
+3457/3457 [==============================] - 2s 683us/step - loss: 5521169920.0000 - mse: 5521169920.0000 - accuracy: 0.0000e+00
+Epoch 7/10
+3457/3457 [==============================] - 2s 687us/step - loss: 5492392448.0000 - mse: 5492392448.0000 - accuracy: 0.0000e+00
+Epoch 8/10
+3457/3457 [==============================] - 2s 684us/step - loss: 5384856576.0000 - mse: 5384856576.0000 - accuracy: 0.0000e+00
+Epoch 9/10
+3457/3457 [==============================] - 2s 689us/step - loss: 5330082816.0000 - mse: 5330082816.0000 - accuracy: 0.0000e+00
+Epoch 10/10
+3457/3457 [==============================] - 2s 689us/step - loss: 5300190208.0000 - mse: 5300190208.0000 - accuracy: 0.0000e+00
+433/433 [==============================] - 0s 542us/step
+213/213 [==============================] - 0s 542us/step
+Train RMSE: 70522.41
+Test RMSE: 70838.72
+
+Process finished with exit code 0
