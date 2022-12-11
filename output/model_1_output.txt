@@ -1,0 +1,19 @@
+C:\Users\lees_\Scripts\python.exe C:\Users\lees_\PycharmProjects\-Predictive-AI-Part-2\model_1.py
+(20640, 9)
+
+Index(['median_house_value', 'median_income', 'housing_median_age',
+       'total_rooms', 'total_bedrooms', 'population', 'households', 'latitude',
+       'longitude'],
+      dtype='object')
+(20640, 9)
+
+Index(['median_house_value', 'median_income', 'housing_median_age',
+       'population', 'households', 'latitude', 'longitude', 'total_rooms_norm',
+       'total_bedrooms_norm'],
+      dtype='object')
+-------------------------------
+MSE: 4.89e+09
+R^2: 0.63
+-------------------------------
+
+Process finished with exit code 0

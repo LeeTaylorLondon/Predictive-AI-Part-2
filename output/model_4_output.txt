@@ -1,0 +1,38 @@
+C:\Users\lees_\Scripts\python.exe C:\Users\lees_\PycharmProjects\-Predictive-AI-Part-2\model_4.py
+(20640, 9)
+
+Index(['median_house_value', 'median_income', 'housing_median_age',
+       'total_rooms', 'total_bedrooms', 'population', 'households', 'latitude',
+       'longitude'],
+      dtype='object')
+(20640, 9)
+
+Index(['median_house_value', 'median_income', 'housing_median_age',
+       'population', 'households', 'latitude', 'longitude', 'total_rooms_norm',
+       'total_bedrooms_norm'],
+      dtype='object')
+C:\Users\lees_\lib\site-packages\tpot\builtins\__init__.py:36: UserWarning: Warning: optional dependency `torch` is not available. - skipping import of NN models.
+  warnings.warn("Warning: optional dependency `torch` is not available. - skipping import of NN models.")
+
+Generation 1 - Current best internal CV score: -2390524428.5472307
+
+Generation 2 - Current best internal CV score: -2346190516.198975
+
+Generation 3 - Current best internal CV score: -2334446440.9416203
+
+Generation 4 - Current best internal CV score: -2334446440.9416203
+
+Generation 5 - Current best internal CV score: -2334446440.9416203
+
+Best pipeline: LassoLarsCV(GradientBoostingRegressor(input_matrix, alpha=0.8, learning_rate=0.1, loss=huber, max_depth=8, max_features=0.7000000000000001, min_samples_leaf=10, min_samples_split=8, n_estimators=100, subsample=1.0), normalize=False)
+
+C:\Users\lees_\lib\site-packages\sklearn\metrics\_scorer.py:765: FutureWarning: sklearn.metrics.SCORERS is deprecated and will be removed in v1.3. Please use sklearn.metrics.get_scorer_names to get a list of available scorers and sklearn.metrics.get_metric to get scorer.
+  warnings.warn(
+C:\Users\lees_\lib\site-packages\sklearn\base.py:450: UserWarning: X does not have valid feature names, but GradientBoostingRegressor was fitted with feature names
+  warnings.warn(
+Traceback (most recent call last):
+  File "C:\Users\lees_\PycharmProjects\-Predictive-AI-Part-2\model_4.py", line 12, in <module>
+    print_function(score)
+TypeError: '_Feature' object is not callable
+
+Process finished with exit code 1
