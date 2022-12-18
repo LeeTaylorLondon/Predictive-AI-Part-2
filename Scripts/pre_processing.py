@@ -11,7 +11,7 @@ pd.set_option('display.max_rows', None)
 
 # Load houses dataset
 df = pd.read_csv("../Data/houses.csv", header=0)
-print(f"{df.shape}\n\n{df.columns}")
+# print(f"{df.shape}\n\n{df.columns}")
 
 # Normalize columns
 total_rooms_norm    = df['total_rooms'] / df['households']
@@ -22,7 +22,9 @@ norms = pd.DataFrame({'total_rooms_norm'    : total_rooms_norm,
                       'total_bedrooms_norm' : total_bedrooms_norm})
 df = df.join(norms)
 df = df.drop(columns=['total_rooms', 'total_bedrooms'])
-print(f"{df.shape}\n\n{df.columns}")
+df_ = scale(df)
+df = pd.DataFrame(df_, columns=df.columns)
+# print(f"{df.shape}\n\n{df.columns}")
 
 def gen_data():
     """ Return Train-Test datasets """
@@ -30,8 +32,8 @@ def gen_data():
     y = df['median_house_value']
     np.random.seed(42)
     # function returns: X_train, X_test, y_train, y_test
-    X_train, X_test, y_train_true, y_test_true = train_test_split(X, y, test_size=0.33, random_state=42)
-    return X_train, X_test, y_train_true, y_test_true
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=42)
+    return X_train, X_test, y_train, y_test
 
 
 if __name__ == '__main__':
