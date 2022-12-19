@@ -26,7 +26,7 @@ df_ = scale(df)
 df = pd.DataFrame(df_, columns=df.columns)
 # print(f"{df.shape}\n\n{df.columns}")
 
-def gen_data():
+def gen_data(debug=True):
     """ Return Train-Test datasets """
     X = df.copy().drop(columns=['median_house_value'], axis=1)
     y = df['median_house_value']
@@ -34,7 +34,10 @@ def gen_data():
     # function returns: X_train, X_test, y_train, y_test
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=42)
     data = [X_train, X_test, y_train, y_test]
-    for d in data: print(d.shape)
+    if debug:
+        print("X_train, X_test, y_train, y_test shapes:")
+        for d in data: print(d.shape)
+        print()
     return X_train, X_test, y_train, y_test
 
 

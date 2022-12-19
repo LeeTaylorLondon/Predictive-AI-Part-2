@@ -81,7 +81,7 @@ for mean, stdev, param in zip(means, stds, params):
    
 ---------------------------------------------------------------------------------------------
  
-Grid Search 1 results: 
+GridSearchCV: Grid Search 1 results: 
 
 Best: -0.219932 using {'activation': 'relu', 'layers': 2, 'units': 512}
 -0.219932 (0.005488) with: {'activation': 'relu', 'layers': 2, 'units': 512}
@@ -93,7 +93,7 @@ Best: -0.219932 using {'activation': 'relu', 'layers': 2, 'units': 512}
 -0.274323 (0.009548) with: {'activation': 'tanh', 'layers': 3, 'units': 512}
 -0.281756 (0.002757) with: {'activation': 'tanh', 'layers': 3, 'units': 1024}
 
-Grid Search 2 results: 
+GridSearchCV: Grid Search 2 results: 
 
 Best: -0.2153350661198298 using {'activation': 'relu', 'layers': 2, 'units': 256}
 -0.225708 (0.005610383694475058) with: {'activation': 'relu', 'layers': 2, 'units': 64}
@@ -121,13 +121,13 @@ Best: -0.2153350661198298 using {'activation': 'relu', 'layers': 2, 'units': 256
 -0.280132 (0.016125180700005026) with: {'activation': 'tanh', 'layers': 5, 'units': 256}
 -0.286209 (0.01854733789273122) with: {'activation': 'tanh', 'layers': 5, 'units': 512}
 
-Grid Search 3 results: 
+GridSearchCV: Grid Search 3 results: 
 
 Best: -0.21311742067337036 using {'activation': 'relu', 'epochs': 50, 'layers': 2, 'optimizer': 'adam', 'units': 256}
 -0.22185669839382172 (0.01106852511667019) with: {'activation': 'relu', 'epochs': 10, 'layers': 2, 'optimizer': 'adam', 'units': 256}
 -0.21311742067337036 (0.010367324146148585) with: {'activation': 'relu', 'epochs': 50, 'layers': 2, 'optimizer': 'adam', 'units': 256}
 
-Grid Search 4 results:
+GridSearchCV: Grid Search 4 results:
 
 Best: -0.212175 using {'activation': 'relu', 'batch_size': 256, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
 -0.221462 (0.001908) with: {'activation': 'relu', 'batch_size': 1, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
