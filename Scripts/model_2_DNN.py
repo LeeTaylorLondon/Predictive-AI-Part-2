@@ -24,15 +24,16 @@ layers      = [2]
 units       = [256]
 activations = ['relu']
 optimizers  = ['adam']
-epochs      = [10, 50]
+epochs      = [25]
+batch_size  = [256]
 param_grid = dict(units=units, activation=activations, layers=layers,
-                  optimizer=optimizers, epochs=epochs)
+                  optimizer=optimizers, epochs=epochs, batch_size=batch_size)
 
 # Create the model
-model = KerasRegressor(build_fn=create_model, epochs=epochs, batch_size=16, verbose=0)
+model = KerasRegressor(build_fn=create_model, epochs=epochs, batch_size=batch_size, verbose=0)
 
 # Perform the grid search
-grid = GridSearchCV(estimator=model, param_grid=param_grid, cv=3)
+grid = GridSearchCV(estimator=model, param_grid=param_grid, cv=2)
 grid_result = grid.fit(X_train, y_train)
 
 # Print the results of the grid search
@@ -61,35 +62,49 @@ Best: -0.219932 using {'activation': 'relu', 'layers': 2, 'units': 512}
 Grid Search 2 results: 
 
 Best: -0.2153350661198298 using {'activation': 'relu', 'layers': 2, 'units': 256}
--0.2257076303164164 (0.005610383694475058) with: {'activation': 'relu', 'layers': 2, 'units': 64}
--0.2153350661198298 (0.004047098886464389) with: {'activation': 'relu', 'layers': 2, 'units': 256}
--0.22635363539059958 (0.0055235757636850225) with: {'activation': 'relu', 'layers': 2, 'units': 512}
--0.22348946332931519 (0.0037692652185719083) with: {'activation': 'relu', 'layers': 3, 'units': 64}
--0.2185470163822174 (0.0032141666190944065) with: {'activation': 'relu', 'layers': 3, 'units': 256}
--0.2255500704050064 (0.004781145412296005) with: {'activation': 'relu', 'layers': 3, 'units': 512}
--0.22560536364714304 (0.004630681555513752) with: {'activation': 'relu', 'layers': 4, 'units': 64}
--0.2181053509314855 (0.006840586448255651) with: {'activation': 'relu', 'layers': 4, 'units': 256}
--0.22066317995389303 (0.007933670407982561) with: {'activation': 'relu', 'layers': 4, 'units': 512}
--0.22016904254754385 (0.005787989325121524) with: {'activation': 'relu', 'layers': 5, 'units': 64}
--0.22959243754545847 (0.006135902432048814) with: {'activation': 'relu', 'layers': 5, 'units': 256}
--0.2309460292259852 (0.010976929578112618) with: {'activation': 'relu', 'layers': 5, 'units': 512}
--0.2346449395020803 (0.003443314702353727) with: {'activation': 'tanh', 'layers': 2, 'units': 64}
--0.24718778332074484 (0.008642968678711664) with: {'activation': 'tanh', 'layers': 2, 'units': 256}
--0.2522334059079488 (0.004968353003027476) with: {'activation': 'tanh', 'layers': 2, 'units': 512}
--0.23588661352793375 (0.004143316236182298) with: {'activation': 'tanh', 'layers': 3, 'units': 64}
--0.24954255918661752 (0.00655520023442987) with: {'activation': 'tanh', 'layers': 3, 'units': 256}
--0.2743479708830516 (0.006677011607917516) with: {'activation': 'tanh', 'layers': 3, 'units': 512}
--0.2364360491434733 (0.008766370998344802) with: {'activation': 'tanh', 'layers': 4, 'units': 64}
--0.25851162274678546 (0.00943073712371849) with: {'activation': 'tanh', 'layers': 4, 'units': 256}
--0.2725006739298503 (0.015316740284002808) with: {'activation': 'tanh', 'layers': 4, 'units': 512}
--0.24615691602230072 (0.008237982697105703) with: {'activation': 'tanh', 'layers': 5, 'units': 64}
--0.2801317671934764 (0.016125180700005026) with: {'activation': 'tanh', 'layers': 5, 'units': 256}
--0.28620901703834534 (0.01854733789273122) with: {'activation': 'tanh', 'layers': 5, 'units': 512}
+-0.225708 (0.005610383694475058) with: {'activation': 'relu', 'layers': 2, 'units': 64}
+-0.215335 (0.004047098886464389) with: {'activation': 'relu', 'layers': 2, 'units': 256}
+-0.226354 (0.0055235757636850225) with: {'activation': 'relu', 'layers': 2, 'units': 512}
+-0.223490 (0.0037692652185719083) with: {'activation': 'relu', 'layers': 3, 'units': 64}
+-0.218547 (0.0032141666190944065) with: {'activation': 'relu', 'layers': 3, 'units': 256}
+-0.225550 (0.004781145412296005) with: {'activation': 'relu', 'layers': 3, 'units': 512}
+-0.225605 (0.004630681555513752) with: {'activation': 'relu', 'layers': 4, 'units': 64}
+-0.218105 (0.006840586448255651) with: {'activation': 'relu', 'layers': 4, 'units': 256}
+-0.220663 (0.007933670407982561) with: {'activation': 'relu', 'layers': 4, 'units': 512}
+-0.220169 (0.005787989325121524) with: {'activation': 'relu', 'layers': 5, 'units': 64}
+-0.229592 (0.006135902432048814) with: {'activation': 'relu', 'layers': 5, 'units': 256}
+-0.230946 (0.010976929578112618) with: {'activation': 'relu', 'layers': 5, 'units': 512}
+-0.234645 (0.003443314702353727) with: {'activation': 'tanh', 'layers': 2, 'units': 64}
+-0.247188 (0.008642968678711664) with: {'activation': 'tanh', 'layers': 2, 'units': 256}
+-0.252233 (0.004968353003027476) with: {'activation': 'tanh', 'layers': 2, 'units': 512}
+-0.235887 (0.004143316236182298) with: {'activation': 'tanh', 'layers': 3, 'units': 64}
+-0.249543 (0.00655520023442987) with: {'activation': 'tanh', 'layers': 3, 'units': 256}
+-0.274348 (0.006677011607917516) with: {'activation': 'tanh', 'layers': 3, 'units': 512}
+-0.236436 (0.008766370998344802) with: {'activation': 'tanh', 'layers': 4, 'units': 64}
+-0.258512 (0.00943073712371849) with: {'activation': 'tanh', 'layers': 4, 'units': 256}
+-0.272500 (0.015316740284002808) with: {'activation': 'tanh', 'layers': 4, 'units': 512}
+-0.246157 (0.008237982697105703) with: {'activation': 'tanh', 'layers': 5, 'units': 64}
+-0.280132 (0.016125180700005026) with: {'activation': 'tanh', 'layers': 5, 'units': 256}
+-0.286209 (0.01854733789273122) with: {'activation': 'tanh', 'layers': 5, 'units': 512}
 
 Grid Search 3 results: 
 
 Best: -0.21311742067337036 using {'activation': 'relu', 'epochs': 50, 'layers': 2, 'optimizer': 'adam', 'units': 256}
 -0.22185669839382172 (0.01106852511667019) with: {'activation': 'relu', 'epochs': 10, 'layers': 2, 'optimizer': 'adam', 'units': 256}
 -0.21311742067337036 (0.010367324146148585) with: {'activation': 'relu', 'epochs': 50, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+
+Grid Search 4 results:
+
+Best: -0.212175 using {'activation': 'relu', 'batch_size': 256, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.221462 (0.001908) with: {'activation': 'relu', 'batch_size': 1, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.222489 (0.000914) with: {'activation': 'relu', 'batch_size': 2, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.233052 (0.015113) with: {'activation': 'relu', 'batch_size': 4, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.214064 (0.007966) with: {'activation': 'relu', 'batch_size': 8, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.220868 (0.000747) with: {'activation': 'relu', 'batch_size': 16, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.219638 (0.000152) with: {'activation': 'relu', 'batch_size': 32, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.215322 (0.004254) with: {'activation': 'relu', 'batch_size': 64, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.224837 (0.008066) with: {'activation': 'relu', 'batch_size': 128, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+-0.212175 (0.006040) with: {'activation': 'relu', 'batch_size': 256, 'epochs': 25, 'layers': 2, 'optimizer': 'adam', 'units': 256}
+
 
 '''

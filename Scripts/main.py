@@ -1,8 +1,12 @@
-# Read in the data
+# Author: Lee Taylor, ST Number: 190211479
+from    pre_processing                          import  *
 
-# Perform any data preparation on the dataset
 
-# Split the data into training and testing data
+''' Define the datasets
+    Read in the data
+    Perform any data preparation on the dataset
+    Split the data into training and testing data '''
+X_train, X_test, y_train, y_test = gen_data()
 
 
 # First model

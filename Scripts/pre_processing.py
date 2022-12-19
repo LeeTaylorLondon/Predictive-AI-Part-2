@@ -33,6 +33,8 @@ def gen_data():
     np.random.seed(42)
     # function returns: X_train, X_test, y_train, y_test
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=42)
+    data = [X_train, X_test, y_train, y_test]
+    for d in data: print(d.shape)
     return X_train, X_test, y_train, y_test
 
 
