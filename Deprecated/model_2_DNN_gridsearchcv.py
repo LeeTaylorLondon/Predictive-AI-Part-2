@@ -20,41 +20,12 @@ def create_model(units=512, activation='relu', layers=2, optimizer='adam'):
     return model
 
 # Define the grid search parameters
-units       = [128, 256]
-activations = ['relu', 'tanh']
 layers      = [2]
+units       = [256]
+activations = ['relu']
 optimizers  = ['adam']
-epochs      = [10]
+epochs      = [25]
 batch_size  = [256]
-hyper_param = [layers, units, activations, optimizers, epochs, batch_size]
-hyp_par_fit = [epochs, batch_size]
-
-# Create all combinations of models - maybe epochs and BaSi cannot go here
-models, m_desc, scores = [], [], []
-for u in units:
-    for a in activations:
-        for l in layers:
-            for o in optimizers:
-                for e in epochs:
-                    for b in batch_size:
-                        models.append(create_model(u, a, l, o))
-                        m_desc.append(f"Units: {u}, Act: {a}, Layers: {l}, Opt: {o}, Epochs: {e}, Batch_Size: {b}")
-
-mptn = -1
-while mptn != len(models) - 1:
-    for i,e in enumerate(epochs):
-        for j,b in enumerate(batch_size):
-            mptn += 1
-            model = models[mptn]
-            model.fit(X_train, y_train, epochs=e, batch_size=b, verbose=0)
-            score = model.evaluate(X_test, y_test, verbose=0)
-            score = [round(score[0], 6), round(score[1], 6)]
-            scores.append(score)
-
-for desc, scor in zip(m_desc, scores):
-    print(f"|Description|: {desc}, |Scores|: {scor}")
-
-'''
 param_grid = dict(units=units, activation=activations, layers=layers,
                   optimizer=optimizers, epochs=epochs, batch_size=batch_size)
 
@@ -72,4 +43,9 @@ stds = grid_result.cv_results_['std_test_score']
 params = grid_result.cv_results_['params']
 for mean, stdev, param in zip(means, stds, params):
     print(f"{mean} ({stdev}) with: {param}")
+
+
+'''
+
+
 '''
