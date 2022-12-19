@@ -20,9 +20,9 @@ def create_model(units=512, activation='relu', layers=2, optimizer='adam'):
     return model
 
 # Define the grid search parameters
-units       = [512]     # , 128, 256, 512
+units       = [128]     # , 128, 256, 512
 activations = ['relu']  # , 'tanh'
-layers      = [2]       # , 3, 4, 5
+layers      = [3]       # , 3, 4, 5
 optimizers  = ['adam', 'rmsprop', 'adagrad', 'adamax']
 epochs      = [10, 25, 50]
 batch_size  = [64]      # 16, 32, 64, 128, 256

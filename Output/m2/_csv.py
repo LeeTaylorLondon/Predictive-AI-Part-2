@@ -1,6 +1,6 @@
 import csv
 
-with open("2.txt", 'r') as f:
+with open("2a.txt", 'r') as f:
     text = f.readlines()
 
 del text[0]
