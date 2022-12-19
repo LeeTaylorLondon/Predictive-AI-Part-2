@@ -25,6 +25,17 @@ def score_r2(model, X_test, y_test):
 def score_model(model, X_test, y_test):
     return score_mse(model, X_test, y_test), score_r2(model, X_test, y_test)
 
+def csvwriter_(results, model_x, test_iter):
+    results_ = []
+    for line in results[1:]:
+        results_.append(','.join(line.split()) + '\n')
+    try:
+        fd = f"../Output/m{model_x}/{test_iter}.csv"
+        with open(fd, 'w+') as f:
+            f.writelines(results_)
+    except FileNotFoundError as e:
+        print(f"Did not write to {fd}. FileNotFound!")
+
 def grid_search(model, hyperparams, X_train, y_train, X_test, y_test, verbose=True):
     """Perform grid search on a given model with a given set of hyperparameters.
     Using a dictionary containing the hyperparameters to be searched over. The keys
@@ -76,6 +87,7 @@ def grid_search(model, hyperparams, X_train, y_train, X_test, y_test, verbose=Tr
 
     # Return the best parameters and the best score
     return params[best_index], scores[best_index], results
+
 
 '''
 ----Example usage----
