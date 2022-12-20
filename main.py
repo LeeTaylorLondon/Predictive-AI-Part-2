@@ -30,11 +30,11 @@ print(f"Best Params: {best_params}, "
 ''' ------------------------------------------ '''
 ''' ---- MODEL 2 : MULTI-LAYER-PERCEPTRON ---- '''
 # Define the grid search parameters
-units       = [128]     # , 128, 256, 512
-activations = ['relu']  # , 'tanh'
-layers      = [3]       # , 3, 4, 5
-optimizers  = ['adam']
-epochs      = [10]
+units       = [128]     # 128, 256, 512, 1024
+activations = ['relu']  # 'tanh'
+layers      = [3]       # 2, 3, 4, 5
+optimizers  = ['adam']  # 'rmsprop', 'adagrad', 'adamax'
+epochs      = [10]      # 25, 50, 100
 batch_size  = [64]      # 16, 32, 64, 128, 256
 hyper_param = [layers, units, activations, optimizers, epochs, batch_size]
 hyp_par_fit = [epochs, batch_size]
@@ -70,6 +70,24 @@ print()
 ''' --------------------------------- '''
 ''' ---- MODEL 3 : RANDOM FOREST ---- '''
 # Define the hyperparameters to search over
+''' First group of hyperparams to test '''
+# # Define the hyperparameters to search over
+# hyperparams = {"n_estimators": [10, 50, 100, 200, 300],
+#                "max_depth": [None, 10, 20, 30, 40, 50],
+#                "min_samples_split": [2, 5, 10, 15, 20],
+#                "min_samples_leaf": [1, 2, 4, 8]}
+''' Second group of hyperparams to test '''
+# Define the hyperparameters to search over
+# hyperparams = {"n_estimators": [300],
+#                "max_depth": [None],
+#                "min_samples_split": [2],
+#                "min_samples_leaf": [2],
+#                "bootstrap": [True],
+#                "oob_score": [True, False],
+#                "warm_start": [True, False],
+#                "min_impurity_decrease": [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+#                "ccp_alpha": [0, 0.1, 0.2, 0.3, 0.4, 0.5]
+#                }
 hyperparams = {"n_estimators": [300],
                "max_depth": [None],
                "min_samples_split": [2],
@@ -94,12 +112,20 @@ print(f"Best Params: {best_params}, "
 
 ''' --------------------------------- '''
 ''' ---- MODEL 4 : DECISION TREE ---- '''
+''' 1st group of hyperparams to test  '''
 # Define the hyperparameters to search over
-hyperparams = {'max_depth':                 [None, 10, 20, 30, 40, 50],
-                'min_samples_split':        [2, 5, 10, 15, 20],
-                'min_samples_leaf':         [1, 2, 4, 8],
-                'min_weight_fraction_leaf': [0.0, 0.1, 0.2, 0.3],
-                'max_leaf_nodes':           [None, 10, 20, 30, 40, 50]}
+# hyperparams = {'max_depth':                 [None, 10, 20, 30, 40, 50],
+#                 'min_samples_split':        [2, 5, 10, 15, 20],
+#                 'min_samples_leaf':         [1, 2, 4, 8],
+#                 'min_weight_fraction_leaf': [0.0, 0.1, 0.2, 0.3],
+#                 'max_leaf_nodes':           [None, 10, 20, 30, 40, 50]}
+''' Second group of hyperparams to test '''
+# Define the hyperparameters to search over
+hyperparams = {'max_depth':                 [20, 30, 40, 50],
+                'min_samples_split':        [20],
+                'min_samples_leaf':         [8, 16, 32, 64],
+                'min_weight_fraction_leaf': [0.0],
+                'max_leaf_nodes':           [None]}
 
 # Test the model
 print("\nTesting: Model 4 - DecisionTreeRegressor")
@@ -115,7 +141,8 @@ print(f"Best Params: {best_params}, "
 '''  
 Example output: 
 
-C:\Users\lees_\Scripts\python.exe C:\Users\lees_\PycharmProjects\Predictive-AI-Part-2\main.py 
+C:/ ... /main.py 
+
 Testing: Model 1 - LinearRegression
 | fit_intercept | copy_X | n_jobs | MSE | R^2 |
 True True -1 0.37206 0.621966
