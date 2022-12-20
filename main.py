@@ -3,9 +3,9 @@
     For each model the possible hyper-parameters are listed
     with the param-dictionary.
 
-    The testing of each model occured orignally in
-    /Scripts/model_X_TYPE.py. '''
-
+    The developing & testing of each model occured orignally in
+    /Scripts/model_X_TYPE.py.
+'''
 from Scripts.functions_   import grid_search, gen_data
 from Scripts.model_2_DNN  import create_model
 from sklearn.linear_model import LinearRegression
@@ -15,6 +15,8 @@ from sklearn.tree         import DecisionTreeRegressor
 
 # Define the datasets
 X_train, X_test, y_train, y_test = gen_data(debug=False)
+
+
 
 
 ''' ------------------------------------- '''
@@ -32,6 +34,8 @@ best_params, best_score, r, bi = grid_search(LinearRegression, hyperparams,
 # Print the results
 print(f"Best Params: {best_params}, "
       f"Scores MSE & R^2: {r[bi].split(' ')[-2:]}\n")
+
+
 
 
 ''' ------------------------------------------ '''
@@ -72,6 +76,8 @@ print("\nTesting: Model 2 - MultiLayerPerceptron")
 for desc, scor in zip(m_desc, scores):
     print(f"|Description|: {desc}, |Scores|: {scor}")
 print()
+
+
 
 
 ''' --------------------------------- '''
@@ -115,6 +121,8 @@ best_params, best_score, r, bi = grid_search(RandomForestRegressor, hyperparams,
 # Print the results
 print(f"Best Params: {best_params}, "
       f"Scores MSE & R^2: {r[bi].split(' ')[-2:]}\n")
+
+
 
 
 ''' --------------------------------- '''
