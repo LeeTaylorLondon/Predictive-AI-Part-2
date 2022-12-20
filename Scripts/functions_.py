@@ -27,7 +27,7 @@ def score_model(model, X_test, y_test):
 
 def csvwriter_(results, model_x, test_iter):
     results_ = []
-    for line in results[1:]:
+    for line in results:
         results_.append(','.join(line.split()) + '\n')
     try:
         fd = f"../Output/m{model_x}/{test_iter}.csv"
@@ -37,7 +37,7 @@ def csvwriter_(results, model_x, test_iter):
         print(f"Did not write to {fd}. FileNotFound!")
 
 def grid_search(model, hyperparams, X_train, y_train, X_test, y_test, verbose=True):
-    """Perform grid search on a given model with a given set of hyperparameters.
+    """ Perform grid search on a given model with a given set of hyperparameters.
     Using a dictionary containing the hyperparameters to be searched over. The keys
     should be the names of the hyperparameters and the values should be lists
     of values to try.
