@@ -1,4 +1,11 @@
-# Author: Lee Taylor, ST Number: 190211479
+''' Author: Lee Taylor, ST Number: 190211479
+
+    For each model the possible hyper-parameters are listed
+    with the param-dictionary.
+
+    The testing of each model occured orignally in
+    /Scripts/model_X_TYPE.py. '''
+
 from Scripts.functions_   import grid_search, gen_data
 from Scripts.model_2_DNN  import create_model
 from sklearn.linear_model import LinearRegression
