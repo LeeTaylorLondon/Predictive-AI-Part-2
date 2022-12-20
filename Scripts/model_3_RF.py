@@ -13,6 +13,18 @@ X_train, X_test, y_train, y_test = gen_data(debug=False)
 #                "min_samples_leaf": [1, 2, 4, 8]}
 ''' Second group of hyperparams to test '''
 # Define the hyperparameters to search over
+# hyperparams = {"n_estimators": [300],
+#                "max_depth": [None],
+#                "min_samples_split": [2],
+#                "min_samples_leaf": [2],
+#                "bootstrap": [True],
+#                "oob_score": [True, False],
+#                "warm_start": [True, False],
+#                "min_impurity_decrease": [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+#                "ccp_alpha": [0, 0.1, 0.2, 0.3, 0.4, 0.5]
+#                }
+''' Third group of hyperparams to test '''
+# Define the hyperparameters to search over
 hyperparams = {"n_estimators": [300],
                "max_depth": [None],
                "min_samples_split": [2],
@@ -20,12 +32,12 @@ hyperparams = {"n_estimators": [300],
                "bootstrap": [True],
                "oob_score": [True, False],
                "warm_start": [True, False],
-               "min_impurity_decrease": [0, 0.1, 0.2, 0.3, 0.4, 0.5],
-               "ccp_alpha": [0, 0.1, 0.2, 0.3, 0.4, 0.5]
+               "min_impurity_decrease": [0],
+               "ccp_alpha": [0]
                }
 
 # Perform the grid search
-best_params, best_score, results = grid_search(RandomForestRegressor, hyperparams,
+best_params, best_score, results, _ = grid_search(RandomForestRegressor, hyperparams,
                                                X_train, y_train, X_test, y_test,
                                                verbose=True)
 

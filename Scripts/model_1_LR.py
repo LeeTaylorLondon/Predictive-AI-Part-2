@@ -11,7 +11,7 @@ hyperparams = {'fit_intercept': [True, False],
                 'n_jobs': [-1, 1, 2, 3, 4]}
 
 # Perform the grid search
-best_params, best_score, results = grid_search(LinearRegression, hyperparams,
+best_params, best_score, results, _ = grid_search(LinearRegression, hyperparams,
                                                X_train, y_train, X_test, y_test,
                                                verbose=True)
 

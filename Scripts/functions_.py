@@ -88,4 +88,4 @@ def grid_search(model, hyperparams, X_train, y_train, X_test, y_test, verbose=Tr
         results.append(re_line)
 
     # Return the best parameters and the best score
-    return params[best_index], scores[best_index], results
+    return params[best_index], scores[best_index], results, best_index

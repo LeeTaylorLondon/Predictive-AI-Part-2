@@ -21,7 +21,7 @@ hyperparams = {'max_depth':                 [20, 30, 40, 50],
                 'max_leaf_nodes':           [None]}
 
 # Perform the grid search
-best_params, best_score, results = grid_search(DecisionTreeRegressor, hyperparams,
+best_params, best_score, results, _ = grid_search(DecisionTreeRegressor, hyperparams,
                                                X_train, y_train, X_test, y_test,
                                                verbose=True)
 
