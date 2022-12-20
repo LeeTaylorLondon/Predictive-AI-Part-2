@@ -15,7 +15,7 @@ X_train, X_test, y_train, y_test = gen_data(debug=False)
 #                 'max_leaf_nodes':           [None, 10, 20, 30, 40, 50]}
 ''' Second group of hyperparams to test '''
 # Define the hyperparameters to search over
-hyperparams = {'max_depth':                 [20],
+hyperparams = {'max_depth':                 [20, 30, 40, 50],
                 'min_samples_split':        [20],
                 'min_samples_leaf':         [8, 16, 32, 64],
                 'min_weight_fraction_leaf': [0.0],
@@ -27,7 +27,7 @@ best_params, best_score, results = grid_search(DecisionTreeRegressor, hyperparam
                                                verbose=True)
 
 # Write the results to a CSV file
-csvwriter_(results, "4", "2")
+csvwriter_(results, "4", "3")
 
 # Print the results
 print()
