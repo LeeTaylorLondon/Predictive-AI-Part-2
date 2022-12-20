@@ -10,7 +10,10 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
 # Load houses dataset
-df = pd.read_csv("../Data/houses.csv", header=0)
+try:
+    df = pd.read_csv("../Data/houses.csv", header=0)
+except FileNotFoundError:
+    df = pd.read_csv("Data/houses.csv", header=0)
 # print(f"{df.shape}\n\n{df.columns}")
 
 # Normalize columns
