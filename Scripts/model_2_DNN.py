@@ -1,9 +1,9 @@
 # Author: Lee Taylor, ST Number: 190211479
+from    tensorflow.keras.wrappers.scikit_learn  import  KerasRegressor
+from    sklearn.model_selection                 import  GridSearchCV
+from    pre_processing                          import  *
 import  numpy                                   as      np
 import  tensorflow                              as      tf
-from    pre_processing                          import  *
-from    sklearn.model_selection                 import  GridSearchCV
-from    tensorflow.keras.wrappers.scikit_learn  import  KerasRegressor
 
 
 # Define the datasets

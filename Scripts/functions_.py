@@ -1,9 +1,11 @@
 # Author: Lee Taylor, ST Number: 190211479
-from    sklearn.linear_model import LinearRegression
+try:
+    from pre_processing  import *
+except ModuleNotFoundError:
+    from Scripts.pre_processing import *
 from    sklearn.metrics import mean_squared_error
 from    sklearn.metrics import r2_score
 from    sklearn.metrics import accuracy_score
-from    pre_processing  import *
 from    itertools       import product
 import  numpy           as     np
 
@@ -87,23 +89,3 @@ def grid_search(model, hyperparams, X_train, y_train, X_test, y_test, verbose=Tr
 
     # Return the best parameters and the best score
     return params[best_index], scores[best_index], results
-
-
-'''
-----Example usage----
-
-# Define the datasets
-X_train, X_test, y_train, y_test = gen_data()
-
-# Define the hyperparameters to search over
-hyperparams = {'fit_intercept': [True, False],
-'copy_X': [True, False],
-'n_jobs': [-1, 1, 2, 3, 4]}
-
-# Perform the grid search
-best_params, best_score = grid_search(LinearRegression, hyperparams, X_train, y_train, X_test, y_test)
-
-# Print the results
-print("Best parameters: ", best_params)
-print("Best score: ", best_score)
-'''

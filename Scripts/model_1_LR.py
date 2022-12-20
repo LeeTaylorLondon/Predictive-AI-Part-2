@@ -1,4 +1,5 @@
 # Author: Lee Taylor, ST Number: 190211479
+from sklearn.linear_model import LinearRegression
 from functions_ import *
 
 # Define the datasets

@@ -1,7 +1,6 @@
 # Author: Lee Taylor, ST Number: 190211479
 from    sklearn.ensemble    import  RandomForestRegressor
-from    pre_processing      import  *
-from    functions_ import *
+from    functions_          import  *
 
 # Define the datasets
 X_train, X_test, y_train, y_test = gen_data(debug=False)
