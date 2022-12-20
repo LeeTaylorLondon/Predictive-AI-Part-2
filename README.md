@@ -19,7 +19,6 @@ hyperparameter tuning and manipulation. Included, is a report on the results.
 ---
 
 ### How To Use
-* Navigate to **/Scripts/main.py**
 * Read **main.py**
 * Execute **main.py**
 
